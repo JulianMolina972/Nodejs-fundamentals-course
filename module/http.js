@@ -1,6 +1,6 @@
 const http = require('http');
 
-http.createServer(router).listen(3000);
+http.createServer(router).listen(3006);
 
 console.log('listening on port 3000');
 
@@ -11,7 +11,8 @@ function router(req, res)  {
 
   switch(req.url) {
     case '/hello':
-      res.write('hello, how are you');
+      let greeting = hello();
+      res.write(greeting);
       res.end();
       break;
 
@@ -29,3 +30,9 @@ function router(req, res)  {
   // res.end();
 
 }
+
+function hello() {
+  return 'hello world';
+}
+
+console.log('listening on port 3000');
